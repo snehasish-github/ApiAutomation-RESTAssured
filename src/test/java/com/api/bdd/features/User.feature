@@ -1,4 +1,4 @@
-Feature: User
+Feature: UserTest
 
 
   @Test
