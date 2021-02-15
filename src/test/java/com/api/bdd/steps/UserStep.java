@@ -1,5 +1,6 @@
 package com.api.bdd.steps;
 import com.api.bdd.utils.ApiUtils;
+import com.google.gson.JsonObject;
 import io.cucumber.core.api.Scenario;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
@@ -13,7 +14,9 @@ public class UserStep {
     private ApiUtils apiUtils;
 
     public UserStep(ApiUtils apiUtils ){
+
         this.apiUtils=apiUtils;
+
     }
 
     @Before
@@ -39,7 +42,19 @@ public class UserStep {
 
     @Given("user triggers createUser Api")
     public void user_triggers_createUser_Api() {
-       
+        try{
+            String url=apiUtils.getProperty("baseUrl").concat("api/users");
+            JsonObject jsonPayload=new JsonObject();
+            jsonPayload.addProperty("name","morpheus");
+            jsonPayload.addProperty("job","leader");
+            request=apiUtils.Request().
+                    body(jsonPayload.toString());
+            response=apiUtils.getPostResponse(request,url);
+            scenario.write("CreateUser API Request:"+request.and().log().body()+"\n Createuser ApiResponse \n"+response.getBody().prettyPrint());
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     @Given("verify Api responseCode {int}")

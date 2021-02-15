@@ -11,7 +11,6 @@ import org.junit.runner.RunWith;
         glue={"com.api.bdd.steps"}
 //        tags={"Test"}
        )
-
 public class TestRunner {
 
 }

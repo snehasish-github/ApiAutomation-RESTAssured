@@ -1,0 +1,34 @@
+{
+  "companyName": "ABC company",
+  "companyHOCity": "NewYork",
+  "companyCEO": "David Thomas",
+  "supportedSalaryBanks": [
+    "City",
+    "NYM",
+    "DBS"
+  ],
+  "employee": [
+    {
+      "firstName": "Tom",
+      "lastNme": "yng",
+      "gender": "M",
+      "age": 30,
+      "salary": 30000.0,
+      "married": true
+    },
+    {
+      "firstName": "Michel",
+      "lastNme": "Tsng",
+      "gender": "M",
+      "age": 35,
+      "salary": 35000.0,
+      "married": false
+    }
+  ],
+  "companyPFDetails": {
+    "pfName": "Trust",
+    "pfCity": "NY",
+    "ofYear": "2015",
+    "noOfEmployees": 40
+  }
+}
